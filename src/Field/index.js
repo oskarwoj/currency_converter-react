@@ -9,9 +9,10 @@ const Field = ({ title }) => (
       <option>USD</option>
       <option>EUR</option>
     </select>
-    if ({title}==="From") (
-    <input className="form__field" type="number" name="buy" value="100" />) (
-    <div className="form__field">25.69</div>)
+    {title === "From" && (
+      <input className="form__field" type="number" name="buy" value="100" />
+    )}
+    {title === "From" || <div className="form__field">25.69</div>}
   </fieldset>
 );
 
