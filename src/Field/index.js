@@ -9,15 +9,9 @@ const Field = ({ title }) => (
       <option>USD</option>
       <option>EUR</option>
     </select>
-    {({ title } == "From")(
-      <React.Fragment>
-        <input className="form__field" type="number" name="buy" value="100" />
-      </React.Fragment>
-    )(
-      <React.Fragment>
-        <div className="form__field">25.69</div>
-      </React.Fragment>
-    )}
+    if ({title}==="From") (
+    <input className="form__field" type="number" name="buy" value="100" />) (
+    <div className="form__field">25.69</div>)
   </fieldset>
 );
 
