@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(https://iili.io/J4MfR4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Lato", sans-serif;
+  padding: 0 0 125px 90px;
+}
+
+/* =============================================
+MAIN
+============================================= */
+.main {
+  width: 100%;
+  width: 400px;
+}
+/* =============================================
+HEADER
+============================================= */
+
+.header__title {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 5px;
+}
+
+.header__paragraph {
+  font-size: 12px;
+  margin: 10px 0;
+  letter-spacing: 5px;
+}
+
+/* =============================================
+FORM
+============================================= */
+.form__field {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+}
+
+.form__button {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 10px 10px 125px 10px;
+  }
+
+  .header__title {
+    font-size: 22px;
+  }
 }
