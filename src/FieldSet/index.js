@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const Field = ({ title }) => (
+const FieldSet = ({ title }) => (
   <fieldset>
     <legend>{title}</legend>
     <select className="form__field">
@@ -16,4 +16,4 @@ const Field = ({ title }) => (
   </fieldset>
 );
 
-export default Field;
+export default FieldSet;

@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button";
-import Field from "./Field";
+import FieldSet from "./FieldSet";
 import Header from "./Header";
 import Form from "./Form";
 import Main from "./Main";
@@ -10,9 +10,9 @@ function App() {
     <Main>
       <Header />
       <Form>
-        <Field title="From" />
+        <FieldSet title="From" />
         <Button name="Invert" />
-        <Field title="To" />
+        <FieldSet title="To" />
         <Button name="Exchange" />
       </Form>
     </Main>
