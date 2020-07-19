@@ -6,6 +6,10 @@ Description
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Instruction: 
+
+![Example usage gif](https://raw.githubusercontent.com/oskarwoj/todo_list/master/images/screen_newFunction.gif)
+
 ## Used technologies:
 
 - HTML
