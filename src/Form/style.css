@@ -1,4 +1,4 @@
-sim.form__label {
+.form__label {
   display: flex;
   justify-content: space-between;
   align-items: center;
