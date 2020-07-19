@@ -3,14 +3,13 @@ import React, { useState } from "react";
 import Form from "./Form";
 import Header from "./Header";
 import FormContainer from "./FormContainer";
-import Main from "./Main";
 import Result from "./Result";
 
 const App = () => {
   const [result, setResult] = useState("");
-  const calculateResult = (amount, firstCurrencyName, secondCurrencyName) => {
+  const calculateResult = (amount, firstCurrency, secondCurrency) => {
     let plnValue = "";
-    let expectedAmount = "";
+    let finalAmount = "";
     const rates = {
       usd: 3.8922,
       eur: 4.399,
@@ -18,7 +17,7 @@ const App = () => {
 
     const { usd, eur } = rates;
 
-    switch (firstCurrencyName) {
+    switch (firstCurrency) {
       case "PLN":
         plnValue = +amount;
         break;
@@ -31,28 +30,26 @@ const App = () => {
         break;
     }
 
-    switch (secondCurrencyName) {
+    switch (secondCurrency) {
       case "PLN":
-        expectedAmount = plnValue;
+        finalAmount = plnValue;
         break;
       case "USD":
-        expectedAmount = plnValue / usd;
+        finalAmount = plnValue / usd;
         break;
       case "EUR":
-        expectedAmount = plnValue / eur;
+        finalAmount = plnValue / eur;
         break;
     }
-    setResult(expectedAmount);
+    setResult(`${finalAmount.toFixed(2)} ${firstCurrency}`);
   };
   return (
     <>
-      <Main>
+      <FormContainer>
         <Header />
-        <FormContainer>
-          <Form calculateResult={calculateResult} />
-          <Result result={result} />
-        </FormContainer>
-      </Main>
+        <Form calculateResult={calculateResult} />
+        <Result result={result} />
+      </FormContainer>
     </>
   );
 };

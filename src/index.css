@@ -23,5 +23,6 @@ body {
 @media (max-width: 420px) {
   body {
     padding: 10px 10px 125px 10px;
+    background-position: 65% 44%;
   }
 }
