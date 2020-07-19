@@ -1,8 +1,8 @@
 /* eslint-disable default-case */
 import React, { useState } from "react";
-import Form from "./Form";
-import Header from "./Header";
 import FormContainer from "./FormContainer";
+import Header from "./Header";
+import Form from "./Form";
 import Result from "./Result";
 
 const App = () => {
@@ -44,13 +44,11 @@ const App = () => {
     setResult(`${finalAmount.toFixed(2)} ${firstCurrency}`);
   };
   return (
-    <>
-      <FormContainer>
-        <Header />
-        <Form calculateResult={calculateResult} />
-        <Result result={result} />
-      </FormContainer>
-    </>
+    <FormContainer>
+      <Header />
+      <Form calculateResult={calculateResult} />
+      <Result result={result} />
+    </FormContainer>
   );
 };
 
