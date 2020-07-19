@@ -6,9 +6,9 @@ Description
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Instruction: 
+## Instruction:
 
-![Example usage gif](https://raw.githubusercontent.com/oskarwoj/todo_list/master/images/screen_newFunction.gif)
+![Example usage gif](https://github.com/oskarwoj/currency_converter-react/blob/master/src/Images/screen_newFunction.gif)
 
 ## Used technologies:
 
