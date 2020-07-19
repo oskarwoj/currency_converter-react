@@ -1,20 +1,18 @@
 import React from "react";
-import Button from "./Button";
-import FieldSet from "./FieldSet";
-import Header from "./Header";
 import Form from "./Form";
+import Header from "./Header";
+import FormContainer from "./FormContainer";
 import Main from "./Main";
+import Result from "./Result";
 
 function App() {
   return (
     <Main>
       <Header />
-      <Form>
-        <FieldSet title="From" />
-        <Button name="Invert" />
-        <FieldSet title="To" />
-        <Button name="Exchange" />
-      </Form>
+      <FormContainer>
+        <Form />
+        <Result result={2} />
+      </FormContainer>
     </Main>
   );
 }

@@ -1,0 +1,21 @@
+sim.form__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form__select {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  margin: 5px;
+  width: 70%;
+}
+
+.form__button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  margin: 10px;
+  width: 90%;
+}
