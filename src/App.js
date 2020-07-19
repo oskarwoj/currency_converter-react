@@ -41,7 +41,7 @@ const App = () => {
         finalAmount = plnValue / eur;
         break;
     }
-    setResult(`${finalAmount.toFixed(2)} ${firstCurrency}`);
+    setResult(`${finalAmount.toFixed(2)} ${secondCurrency}`);
   };
   return (
     <FormContainer>
