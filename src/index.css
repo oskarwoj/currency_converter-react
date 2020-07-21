@@ -20,9 +20,9 @@ body {
   padding: 0 0 125px 90px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
   body {
-    padding: 10px 10px 125px 10px;
-    background-position: 61% 44%;
+    padding: 65px 10px 125px 10px;
+    background-position: 59% 40%;
   }
 }
