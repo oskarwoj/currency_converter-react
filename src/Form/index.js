@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const Form = ({ calculateResult }) => {
+const Form = ({ calculateResult, plnValue }) => {
   const [amount, setAmount] = useState("");
-  const [sourceCurrency, setsourceCurrency] = useState("");
-  const [targetCurrency, settargetCurrency] = useState("");
+  const [sourceCurrency, setSourceCurrency] = useState("PLN");
+  const [targetCurrency, setTargetCurrency] = useState("PLN");
 
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculateResult(+amount, sourceCurrency, targetCurrency);
   };
+
+  const options = Object.entries(plnValue).map((plnValue) => (
+    <option key={plnValue[0]}>{plnValue[0]}</option>
+  ));
 
   return (
     <form onSubmit={onFormSubmit} className="form">
@@ -32,12 +36,9 @@ const Form = ({ calculateResult }) => {
           <select
             className="form__select"
             value={sourceCurrency}
-            onChange={({ target }) => setsourceCurrency(target.value)}
+            onChange={({ target }) => setSourceCurrency(target.value)}
           >
-            <option></option>
-            <option>PLN</option>
-            <option>USD</option>
-            <option>EUR</option>
+            {options}
           </select>
         </label>
         <label className="form__label">
@@ -45,12 +46,9 @@ const Form = ({ calculateResult }) => {
           <select
             className="form__select"
             value={targetCurrency}
-            onChange={({ target }) => settargetCurrency(target.value)}
+            onChange={({ target }) => setTargetCurrency(target.value)}
           >
-            <option></option>
-            <option>PLN</option>
-            <option>USD</option>
-            <option>EUR</option>
+            {options}
           </select>
         </label>
         <label className="form__label">
