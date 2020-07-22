@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const FieldSet = ({ calculateResult }) => {
+const Form = ({ calculateResult }) => {
   const [amount, setAmount] = useState("");
-  const [firstCurrency, setFirstCurrency] = useState("");
-  const [secondCurrency, setSecondCurrency] = useState("");
+  const [sourceCurrency, setsourceCurrency] = useState("");
+  const [targetCurrency, settargetCurrency] = useState("");
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    calculateResult(+amount, firstCurrency, secondCurrency);
+    calculateResult(+amount, sourceCurrency, targetCurrency);
   };
 
   return (
@@ -31,8 +31,8 @@ const FieldSet = ({ calculateResult }) => {
           <span className="form__labelText">From: </span>
           <select
             className="form__select"
-            value={firstCurrency}
-            onChange={({ target }) => setFirstCurrency(target.value)}
+            value={sourceCurrency}
+            onChange={({ target }) => setsourceCurrency(target.value)}
           >
             <option></option>
             <option>PLN</option>
@@ -44,8 +44,8 @@ const FieldSet = ({ calculateResult }) => {
           <span className="form__labelText">To: </span>
           <select
             className="form__select"
-            value={secondCurrency}
-            onChange={({ target }) => setSecondCurrency(target.value)}
+            value={targetCurrency}
+            onChange={({ target }) => settargetCurrency(target.value)}
           >
             <option></option>
             <option>PLN</option>
@@ -61,4 +61,4 @@ const FieldSet = ({ calculateResult }) => {
   );
 };
 
-export default FieldSet;
+export default Form;

@@ -7,9 +7,9 @@ import Result from "./Result";
 
 const App = () => {
   const [result, setResult] = useState("");
-  const calculateResult = (amount, firstCurrency, secondCurrency) => {
-    let plnValue = "";
-    let finalAmount = "";
+  const calculateResult = (amount, sourceCurrency, targetCurrency) => {
+    let plnValue, finalAmount;
+
     const rates = {
       usd: 3.8922,
       eur: 4.399,
@@ -17,7 +17,7 @@ const App = () => {
 
     const { usd, eur } = rates;
 
-    switch (firstCurrency) {
+    switch (sourceCurrency) {
       case "PLN":
         plnValue = +amount;
         break;
@@ -30,7 +30,7 @@ const App = () => {
         break;
     }
 
-    switch (secondCurrency) {
+    switch (targetCurrency) {
       case "PLN":
         finalAmount = plnValue;
         break;
@@ -41,7 +41,7 @@ const App = () => {
         finalAmount = plnValue / eur;
         break;
     }
-    setResult(`${finalAmount.toFixed(2)} ${secondCurrency}`);
+    setResult(`${finalAmount.toFixed(2)} ${targetCurrency}`);
   };
   return (
     <FormContainer>
