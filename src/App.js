@@ -4,6 +4,7 @@ import FormContainer from "./FormContainer";
 import Header from "./Header";
 import Form from "./Form";
 import Result from "./Result";
+import Clock from "./Clock";
 
 const App = () => {
   const [result, setResult] = useState("");
@@ -24,6 +25,7 @@ const App = () => {
       <Header />
       <Form calculateResult={calculateResult} plnValue={plnValue} />
       <Result result={result} />
+      <Clock />
     </FormContainer>
   );
 };
