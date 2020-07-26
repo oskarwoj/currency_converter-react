@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 
 const Clock = () => {
-  const [dateTime, setDateTime] = useState([]);
+  const [dateTime, setDateTime] = useState();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
