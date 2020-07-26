@@ -14,7 +14,7 @@ const Clock = () => {
         minute: "numeric",
         second: "numeric",
       };
-      const newDate = new Date().toLocaleDateString("pl-PL", dateTemplate);
+      const newDate = new Date().toLocaleDateString("en-US", dateTemplate);
       setDateTime(newDate);
     }, 1000);
     return () => {
