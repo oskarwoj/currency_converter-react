@@ -1,11 +1,11 @@
 import React from "react";
-import "./style.css";
+import { Title, Paragraph } from "./styled";
 
 const Header = () => (
-  <header className="header">
-    <h1 className="header__title">Currency Converter</h1>
-    <p className="header__paragraph">Fast and secure currency exchange</p>
-  </header>
+  <>
+    <Title>Currency Converter</Title>
+    <Paragraph>Fast and secure currency exchange</Paragraph>
+  </>
 );
 
 export default Header;

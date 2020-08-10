@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./style.css";
+
+import { Label, Select, Input, Button } from "./styled";
 
 const Form = ({ calculateResult, plnValue }) => {
   const [amount, setAmount] = useState("");
   const [sourceCurrency, setSourceCurrency] = useState("PLN");
-  const [targetCurrency, setTargetCurrency] = useState("PLN");
+  const [targetCurrency, setTargetCurrency] = useState("EUR");
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -16,13 +17,12 @@ const Form = ({ calculateResult, plnValue }) => {
   ));
 
   return (
-    <form onSubmit={onFormSubmit} className="form">
-      <fieldset className="from__fieldset">
-        <legend className="form__legend">Converter</legend>
-        <label className="form__label">
-          <span className="form__labelText">Amount: </span>
-          <input
-            className="form__select"
+    <form onSubmit={onFormSubmit}>
+      <fieldset>
+        <legend>Converter</legend>
+        <Label>
+          <span>Amount: </span>
+          <Input
             required
             type="number"
             step="0.01"
@@ -30,30 +30,28 @@ const Form = ({ calculateResult, plnValue }) => {
             value={amount}
             onChange={({ target }) => setAmount(target.value)}
           />
-        </label>
-        <label className="form__label">
-          <span className="form__labelText">From: </span>
-          <select
-            className="form__select"
+        </Label>
+        <Label>
+          <span>From: </span>
+          <Select
             value={sourceCurrency}
             onChange={({ target }) => setSourceCurrency(target.value)}
           >
             {options}
-          </select>
-        </label>
-        <label className="form__label">
-          <span className="form__labelText">To: </span>
-          <select
-            className="form__select"
+          </Select>
+        </Label>
+        <Label>
+          <span>To: </span>
+          <Select
             value={targetCurrency}
             onChange={({ target }) => setTargetCurrency(target.value)}
           >
             {options}
-          </select>
-        </label>
-        <label className="form__label">
-          <button className="form__button">Exchange</button>
-        </label>
+          </Select>
+        </Label>
+        <Label>
+          <Button>Exchange</Button>
+        </Label>
       </fieldset>
     </form>
   );
