@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 
-const defaultDate = {
-  weekday: "long",
-  day: "numeric",
-  month: "long",
-  hour: "numeric",
-  minute: "numeric",
-  second: "numeric",
-};
+const formatDate = (date) =>
+  date.toLocaleString(undefined, {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  });
 
 const Clock = () => {
-  const [dateTime, setDateTime] = useState(
-    new Date().toLocaleDateString(undefined, defaultDate)
-  );
+  const [date, setDate] = useState(new Date());
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const newDate = new Date().toLocaleDateString(undefined, defaultDate);
-      setDateTime(newDate);
+      setDate(new Date());
     }, 1000);
 
     return () => {
@@ -26,6 +24,6 @@ const Clock = () => {
     };
   }, []);
 
-  return <p className="form__clock"> {dateTime} </p>;
+  return <p className="form__clock"> {formatDate(date)} </p>;
 };
 export default Clock;
