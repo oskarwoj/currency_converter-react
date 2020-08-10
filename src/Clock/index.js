@@ -1,6 +1,6 @@
 import React from "react";
 import useCurrentDate from "./useCurrentDate";
-import "./style.css";
+import {StyledClock} from  "./styled"
 
 const formatDate = (date) =>
   date.toLocaleString(undefined, {
@@ -15,7 +15,7 @@ const formatDate = (date) =>
 const Clock = () => {
   const date = useCurrentDate();
 
-  return <p className="form__clock"> {formatDate(date)} </p>;
+  return <StyledClock> {formatDate(date)} </StyledClock>;
 };
 
 export default Clock;
