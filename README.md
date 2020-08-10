@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Instruction:
 
-![Example usage gif](https://github.com/oskarwoj/currency_converter-react/blob/master/src/screen_newFunction.gif)
+![Example usage gif](https://github.com/oskarwoj/currency_converter-react/blob/master/src/images/sample.gif?raw=true)
 
 ## Used technologies:
 
