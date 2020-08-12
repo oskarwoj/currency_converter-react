@@ -15,7 +15,7 @@ const formatDate = (date) =>
 const Clock = () => {
   const date = useCurrentDate();
 
-  return <StyledClock> {formatDate(date)} </StyledClock>;
+  return <StyledClock>{formatDate(date)}</StyledClock>;
 };
 
 export default Clock;
