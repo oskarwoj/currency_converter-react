@@ -1,4 +1,4 @@
-https://oskarwoj.github.io/currency_converter-react/
+LIVE: https://oskarwoj.github.io/currency_converter-react/
 
 # Currency Converter
 

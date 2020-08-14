@@ -5,6 +5,7 @@ import Header from "./Header";
 import Form from "./Form";
 import Result from "./Result";
 import Clock from "./Clock";
+import { GlobalStyle } from "./GlobalStyle";
 
 const App = () => {
   const [result, setResult] = useState("");
@@ -22,6 +23,7 @@ const App = () => {
   };
   return (
     <FormContainer>
+      <GlobalStyle />
       <Header />
       <Form calculateResult={calculateResult} plnValue={plnValue} />
       <Result result={result} />
