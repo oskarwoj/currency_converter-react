@@ -29,6 +29,9 @@ html {
       padding: 120px 10px 125px 10px;
       background-position: 59% 40%;
     }
+    p {
+      font-size:14px
+    }
   }
   
 `;
