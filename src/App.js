@@ -13,16 +13,19 @@ const App = () => {
   const [plnValue, setPlnValue] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://api.exchangeratesapi.io/latest?base=PLN")
-      .then((response) => {
-        const rates = response.data.rates;
-        console.log(rates);
-        setPlnValue(rates);
-      })
-      .catch(() => {
-        console.log("jest error");
-      });
+    const fetchRates = async () => {
+      await axios
+        .get("https://api.exchangeratesapi.io/latest?base=PLN")
+        .then((response) => {
+          const rates = response.data.rates;
+
+          setPlnValue(rates);
+        })
+        .catch(() => {
+          console.log("error, please check your code");
+        });
+    };
+    fetchRates();
   }, []);
 
   const calculateResult = (amount, sourceCurrency, targetCurrency) => {
