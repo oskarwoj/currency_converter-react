@@ -1,5 +1,6 @@
 /* eslint-disable default-case */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import FormContainer from "./FormContainer";
 import Header from "./Header";
 import Form from "./Form";
@@ -9,16 +10,24 @@ import { GlobalStyle } from "./GlobalStyle";
 
 const App = () => {
   const [result, setResult] = useState("");
+  const [plnValue, setPlnValue] = useState([]);
 
-  const plnValue = {
-    PLN: 1,
-    USD: 3.92,
-    EUR: 4.399,
-  };
+  useEffect(() => {
+    axios
+      .get("https://api.exchangeratesapi.io/latest?base=PLN")
+      .then((response) => {
+        const rates = response.data.rates;
+        console.log(rates);
+        setPlnValue(rates);
+      })
+      .catch(() => {
+        console.log("jest error");
+      });
+  }, []);
 
   const calculateResult = (amount, sourceCurrency, targetCurrency) => {
     const resultValue =
-      (amount * plnValue[sourceCurrency]) / plnValue[targetCurrency];
+      (amount * plnValue[targetCurrency]) / plnValue[sourceCurrency];
     setResult(`${resultValue.toFixed(2)} ${targetCurrency}`);
   };
   return (
