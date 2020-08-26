@@ -1,9 +1,9 @@
 import React from "react";
 import useCurrentDate from "./useCurrentDate";
-import {StyledClock} from  "./styled"
+import { StyledClock } from "./styled";
 
 const formatDate = (date) =>
-  date.toLocaleString(undefined, {
+  date.toLocaleString("en-US", {
     weekday: "long",
     day: "numeric",
     month: "long",

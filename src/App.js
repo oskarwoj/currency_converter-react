@@ -9,12 +9,12 @@ import Clock from "./Clock";
 import { GlobalStyle } from "./GlobalStyle";
 
 const App = () => {
-  const { date, ratesValue, isError } = useRates();
+  const { date, rates, isError } = useRates();
   const [result, setResult] = useState("");
 
   const calculateResult = (amount, sourceCurrency, targetCurrency) => {
     const resultValue =
-      (amount * ratesValue[targetCurrency]) / ratesValue[sourceCurrency];
+      (amount * rates[targetCurrency]) / rates[sourceCurrency];
     setResult(`${resultValue.toFixed(2)} ${targetCurrency}`);
   };
   return (
@@ -22,9 +22,9 @@ const App = () => {
       <GlobalStyle />
       <Clock />
       <Header />
-      {ratesValue ? (
+      {rates ? (
         <>
-          <Form calculateResult={calculateResult} plnValue={ratesValue} />
+          <Form calculateResult={calculateResult} plnValue={rates} />
           <Result result={result} />
           <p>
             Currency exchange rates updated on: <strong>{date}</strong>

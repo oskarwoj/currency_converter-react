@@ -2,32 +2,27 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export const useRates = () => {
-  const [ratesValue, setRatesValue] = useState(null);
-  const [date, setDate] = useState(null);
-  const [isError, setIsError] = useState(false);
+  const [data, setData] = useState({
+    rates: "",
+    date: "",
+    isError: false,
+  });
 
   useEffect(() => {
     const fetchRates = async () => {
       await axios
         .get("https://api.exchangeratesapi.io/latest?base=PLN")
         .then((response) => {
-          const rates = response.data.rates;
-          const date = response.data.date;
-          setDate(date);
-          setRatesValue(rates);
+          const ratesAPI = response.data.rates;
+          const dateAPI = response.data.date;
+          setData({ rates: ratesAPI, date: dateAPI, isError: false });
         })
         .catch(() => {
-          setIsError(true);
+          setData({ isError: true });
         });
     };
-    setTimeout(() => {
-      fetchRates();
-    }, 1000);
+    setTimeout(fetchRates, 1000);
   }, []);
 
-  return {
-    ratesValue,
-    date,
-    isError,
-  };
+  return data;
 };
